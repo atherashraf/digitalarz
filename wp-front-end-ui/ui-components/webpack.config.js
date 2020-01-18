@@ -20,11 +20,11 @@ module.exports = (env, options) => {
     let config = null;
     if (env.NODE_ENV === 'start') {
         const startConfig = require("./webpack-start-script.config");
-        config = startConfig(options, entry, widget[key].html, true);
+        config = startConfig(options, entry, widget[key].html, false);
     } else {
         const buildConfig = require("./webpack-build-script.config");
         const app_name = "ui_components";
-        config = buildConfig(options, entry, app_name, true)
+        config = buildConfig(options, entry, app_name, false)
     }
     return config;
 }
