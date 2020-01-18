@@ -22,7 +22,7 @@ class BottomAppbar extends React.Component {
                         })}>
                     <Typography className={classes.bottomTitle}>
                         <a href={"http://digitalarz.info"} target={"_blank"}>
-                            <span style={{color: 'beige', fontSize: '0.7rem'}}>Developed by Dr. Ather Ashraf</span>
+                            <span className={"bottom-nav-a"}>Developed by Dr. Ather Ashraf</span>
                         </a>
                     </Typography>
                 </AppBar>

@@ -3,7 +3,7 @@ import * as React from "react";
 import TextField from "@material-ui/core/TextField";
 import Container from "@material-ui/core/Container";
 
-import {DAButton, styles} from "../../molecules/static/styles/materialui-styles"
+import {styles} from "../../molecules/static/styles/materialui-styles"
 
 import {withStyles} from '@material-ui/core/styles';
 
@@ -17,7 +17,6 @@ class SignInFormPage extends React.PureComponent {
     }
 
     render() {
-        const {classes} = this.props
         return (
             <Container maxWidth="sm" style={{"textAlign": "center", "paddingTop": "100px"}}>
                 <TextField fullWidth  // autoFocus // type="email"
@@ -30,17 +29,16 @@ class SignInFormPage extends React.PureComponent {
                            name="password" type="password" variant="filled"
                 />
                 <br/>
-                <DAButton id={"btnSubmit"} type={"submit"} onClick={this.submitLogin} variant="contained"
-                          color="primary" style={{"margin": "10px"}}>
+                <button id={"btnSubmit"} className={"btn btn-site"} type={"submit"} onClick={this.submitLogin}
+                        variant="contained" style={{"margin": "10px"}}>
                     Submit
-                </DAButton>
+                </button>
                 {/*</Grid>*/}
                 {/*<Grid item xs={6} style={{"textAlign":"center"}}>*/}
-                <DAButton id={"btnCancel"} onClick={this.props.handleCloseSignInForm} variant="contained"
-                          style={{"margin": "10px"}}
-                          color="primary">
+                <button id={"btnCancel"} className={"btn btn-site"} onClick={this.props.handleCloseSignInForm}
+                        variant="contained" style={{"margin": "10px"}}>
                     Cancel
-                </DAButton>
+                </button>
 
             </Container>
 

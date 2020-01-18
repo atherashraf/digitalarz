@@ -43,14 +43,13 @@ class SideDrawer extends React.Component {
         let {classes} = this.props;
         for (let i in this.props.navItems) {
             let navItem = this.props.navItems[i];
-            let iconColor = (navItem.color ? navItem.color : "#00000088");
+            let iconColor = navItem.color;
             let item = <Tooltip key={"SideNav-Tooltip" + i} title={navItem.name}>
                 <ListItem key={"SideNav-ListItem" + i} button component="a" href={navItem.href}>
-
                     <ListItemIcon>
-                        <Icon className={navItem.icon} style={{color: iconColor}}/>
+                        <Icon className={clsx(navItem.icon, "side-nav-item-icon")} style={{color: iconColor}}/>
                     </ListItemIcon>
-                    <span style={{color: "black"}}>{navItem.name}</span>
+                    <span className={"side-nav-item-text"}>{navItem.name}</span>
                 </ListItem>
             </Tooltip>
             navItems.push(item)
@@ -78,19 +77,18 @@ class SideDrawer extends React.Component {
                     }),
                 }}
                 open={this.props.openSidebar}>
-                <div className={classes.drawerHeader}>
+                <div >
                     <IconButton onClick={this.props.handleToogleSidebar}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
                     </IconButton>
                 </div>
                 <Divider/>
-                <div className={classes.drawerSideNavbar}>
+                <div >
                     <List component="nav" aria-label="main mailbox folders">
                         {me.showNavItems()}
                     </List>
                 </div>
-                <div className={classes.drawerFooter}>
-                </div>
+
             </Drawer>
         )
     }

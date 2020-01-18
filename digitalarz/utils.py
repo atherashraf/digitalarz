@@ -311,8 +311,8 @@ class Context_Utils():
         user_items = [];
         options = {
             "manage": {"name": "Manage", "href": "/admin/", "icon": "fa fa-database"},
-            "manage_spatial": {"name": "Manage Spatial Data", "href": "/spatial_data_admin/",
-                               "icon": "fa fa-database"},
+            # "manage_spatial": {"name": "Manage Spatial Data", "href": "/spatial_data_admin/",
+            #                    "icon": "fa fa-database"},
             "signout": {'name': 'Sign out', 'href': '/accounts/logout/', 'icon': 'fa fa-sign-out'}
         }
         if user.is_superuser:
