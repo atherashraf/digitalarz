@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'digitalarz.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+DATABASE_ROUTERS = ['digitalarz.routers.multi_database_router']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
